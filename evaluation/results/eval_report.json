@@ -1,0 +1,57 @@
+{
+  "timestamp": "2026-10-11T19:41:10Z",
+  "dataset": "evaluation/datasets/sample_dsa_notes.txt",
+  "sample_size_chunks": 6,
+  "extracted_nodes": 10,
+  "extracted_edges": 3,
+  "rag_comparison": {
+    "vector_only_accuracy": 1.0,
+    "graph_enhanced_accuracy": 1.0,
+    "recall_improvement_pct": "+20%"
+  },
+  "recommendation_comparison": {
+    "generic_recommender_action": "Recommends advanced concept Breadth-First Search immediately without checking prerequisites.",
+    "prerequisite_aware_action": "Recommends 'Queue' because prerequisite is not yet mastered (High Priority).",
+    "rationale": "Identified knowledge gap in Queue based on recent quiz performance (25% mastery)."
+  },
+  "alias_resolution_comparison": {
+    "raw_string_unification_rate": "0% (BFS and Breadth-First Search treated as distinct duplicate nodes)",
+    "normalized_canonical_rate": "100% (Correctly mapped to canonical entity with aliases preserved)",
+    "examples": [
+      {
+        "raw": "BFS",
+        "canonical": "Breadth-First Search",
+        "aliases": [
+          "bfs",
+          "level order traversal",
+          "breadth-first search",
+          "breadth first search"
+        ]
+      },
+      {
+        "raw": "breadth first search",
+        "canonical": "Breadth-First Search",
+        "aliases": [
+          "breadth first search",
+          "bfs",
+          "level order traversal",
+          "breadth-first search"
+        ]
+      },
+      {
+        "raw": "DFS",
+        "canonical": "Depth-First Search",
+        "aliases": [
+          "depth-first search",
+          "depth first search",
+          "dfs"
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Evaluated on small-to-medium CS curriculum dataset (first-release scope).",
+    "Mastery scores are transparent empirical estimates and should not be treated as definitive psycho-metric diagnoses.",
+    "Local TF-IDF vectorizer provides deterministic zero-dependency execution; external embedding models can be configured for higher scale semantic matching."
+  ]
+}

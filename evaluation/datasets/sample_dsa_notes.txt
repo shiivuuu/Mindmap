@@ -1,0 +1,26 @@
+# Data Structures and Algorithms: Graph Algorithms & Traversal Handbook
+
+## Chapter 1: Foundational Queue Principles
+A Queue is an essential linear abstract data structure governed by the First-In, First-Out (FIFO) discipline.
+Elements are appended to the back (enqueue) and extracted from the front (dequeue).
+In computer science, queues provide the scheduling mechanism for level-order exploration in graphs and trees.
+Without a FIFO queue, breadth-first traversal degenerates and cannot preserve depth tiers.
+
+## Chapter 2: Breadth-First Search (BFS)
+Breadth-First Search (BFS) is a systematic graph traversal algorithm that discovers all neighbor vertices at depth d
+before proceeding to vertices at depth d + 1.
+BFS strictly relies on a FIFO Queue to manage its frontier.
+On unweighted graphs, BFS is guaranteed to discover the shortest path in terms of edge count.
+For a graph represented as an adjacency list with V vertices and E edges, BFS exhibits a linear time complexity of O(V + E).
+
+## Chapter 3: Depth-First Search (DFS) & Recursion
+Depth-First Search (DFS) is a traversal technique that explores along each branch as deeply as possible before backtracking.
+Unlike BFS, DFS requires a Last-In, First-Out (LIFO) Stack or the recursive execution call stack.
+DFS is standard for detecting cycles in directed graphs, computing topological orders, and finding strongly connected components.
+The time complexity of DFS is O(V + E), while its auxiliary space is bounded by the maximum recursion tree depth O(H).
+
+## Chapter 4: Single-Source Shortest Paths & Priority Queues
+Dijkstra's Algorithm computes the single-source shortest path on weighted graphs with non-negative edge weights.
+It extends the intuition of BFS by replacing the standard FIFO Queue with a Priority Queue (Min-Heap).
+The time complexity using an adjacency list and binary heap is O((V + E) log V).
+BFS can be viewed as a specialized case of Dijkstra's algorithm where all edge weights are uniform and non-negative.
